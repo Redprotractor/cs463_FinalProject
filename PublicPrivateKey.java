@@ -6,8 +6,7 @@ package finalProject;
 import java.io.IOException;
 
 import java.util.Scanner;
-import java.awt.*;
-import java.awt.event.*;
+
 
 /**
  * CS 463 Cryptography for Cybersecurity 
@@ -65,7 +64,7 @@ public class PublicPrivateKey {
 				System.out.println("'p' must be a prime number");
 		}
 		
-		System.out.println("\nChoose a value for 'alpha' where alpha>1 && alpha< p-1");
+		System.out.println("\nChoose a value for 'alpha' where (1<alpha<p-1)");
 		while (alpha < 2 || alpha > p-2) {
 		    alpha = input.nextInt();
 		    if (alpha < 2 || alpha > p-2) {
@@ -80,7 +79,7 @@ public class PublicPrivateKey {
 		 *  Alice computes public key A = alpha^a mod p
 		 * 
 		 */
-        System.out.println("Alice chooses a value for 'a' where a>1 && a<p-1");
+        System.out.println("Alice chooses a value for 'a' where 1<a<p-1");
         while (a < 2 || a > p-2) {
             a = input.nextInt();
             if (a < 2 || a > p-2) {
@@ -96,7 +95,7 @@ public class PublicPrivateKey {
          *  Bob computes public key B = alpha^b mod p
          * 
          */
-        System.out.println("Bob chooses a value for 'b' where b>1 && b<p-1");
+        System.out.println("Bob chooses a value for 'b' where 1<b<p-1");
         while (b < 2 || b > p-2) {
             b = input.nextInt();
             if (b < 2 || b > p-2) {
@@ -116,6 +115,8 @@ public class PublicPrivateKey {
         System.out.println("Bob computes shared key");
         BP = Key(A, b, p);
         System.out.println("\nCheck that Alice and Bob's shared keys are the same");
+		System.out.println("Alices computed shared key is " + AP);
+		System.out.println("Bob's computed shared key is " + BP);
         System.out.println("Keys are equal: " + areEqual(AP,BP));
 		input.close();
 	}
