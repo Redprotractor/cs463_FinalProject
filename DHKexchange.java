@@ -1,6 +1,7 @@
 import java.io.IOException;
 
 import java.util.Scanner;
+import java.math.BigInteger;
 
 
 /**
@@ -31,7 +32,7 @@ import java.util.Scanner;
  *  
  *  Verify that both computed keys K are equal
  */
-public class PublicPrivateKey {
+public class DHKexchange {
 	
 	public static void main(String[] args) throws IOException {
 		int p = 0; // a large prime number
